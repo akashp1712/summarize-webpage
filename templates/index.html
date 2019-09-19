@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Summarize webpage using Natural Language Processing">
+    <meta name="author" content="Akash Panchal">
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'assets/ico/favicon.ico') }}">
+
+    <title>KnowXYZ - Natural Language Processing</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename = 'assets/css/bootstrap.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename = 'assets/css/main.css') }}" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<!-- Static navbar -->
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">Webpage Summarize</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+
+<!-- +++++ Projects Section +++++ -->
+
+<div class="container pt">
+    <div class="row mt">
+        <div class="col-lg-6 col-lg-offset-3 centered">
+            <h3>Summarize any webpage you wish</h3>
+            <h5>Hey... with a few exceptions</h5>
+            <hr>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout.</p>
+        </div>
+    </div>
+    <div class="row mt">
+        <div class="col-lg-8 col-lg-offset-2">
+            <form role="form">
+                <div class="form-group">
+                    <input type="url" class="form-control" id="inputUrl"
+                           placeholder="https://medium.com/the-mission/the-5-minute-routine-that-will-10x-your-productivity-1d148c360ea8">
+                </div>
+                <input type="button" id="btnSubmit" value="SUBMIT" class="btn btn-success"/>
+            </form>
+            <hr>
+            <div id="summary">
+                <!-- +++++ Summary output will be displayed here +++++ -->
+            </div>
+        </div>
+    </div><!-- /row -->
+</div><!-- /container -->
+
+
+<!-- +++++ Footer Section +++++ -->
+
+<div id="footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4">
+                <h4>On Internet</h4>
+                <p>
+                    <a href="https://github.com/akashp1712/summarize_webpage">Github</a><br/>
+                </p>
+            </div><!-- /col-lg-4 -->
+
+            <div class="col-lg-6">
+                <h4>About the project</h4>
+                <p>This is an educational project that demonstrate the usage of the <a href="https://www.nltk.org"
+                                                                                       target="_blank">NLTK</a> (for
+                    NLP)
+                    and <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank">Flask</a> (for
+                    webservice).</p>
+            </div><!-- /col-lg-4 -->
+        </div>
+    </div>
+</div>
+
+<div id="copyrights">
+    <div class="container">
+        <p>
+            &copy; Copyrights <strong>Stanley</strong>. All Rights Reserved
+        </p>
+        <div class="credits">
+            <!--
+              You are NOT allowed to delete the credit link to TemplateMag with free version.
+              You can delete the credit link only if you bought the pro version.
+              Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/stanley-bootstrap-freelancer-template/
+              Licensing information: https://templatemag.com/license/
+            -->
+            Created with Stanley template by <a href="https://templatemag.com/">TemplateMag</a>
+        </div>
+    </div>
+</div>
+<!-- / copyrights -->
+
+<!-- Bootstrap core JavaScript
+  ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ url_for('static', filename = 'assets/js/bootstrap.min.js') }}"></script>
+<script>var baseUrl = "{{ base_url|safe }}";</script>
+<script src="{{ url_for('static', filename = 'assets/js/main.js') }}"></script>
+
+</body>
+
+</html>
