@@ -14,3 +14,4 @@
 	- to create chrome plugin
 - [ ] Neptune
 - [ ] Generate requirements.txt
+        > pipreqs --force --use-local --encoding UTF-8  D:\Development\Github\summarize_webpage
