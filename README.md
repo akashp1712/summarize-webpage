@@ -1,19 +1,19 @@
 # summarize_webpage
-###### A Flask application that summarize webpage using Natural Language Processing powered by [nlp-akash](https://github.com/akashp1712/nlp-akash).
+###### A Flask application that extract and summarize webpage using Natural Language Processing powered by [nlp-akash](https://github.com/akashp1712/nlp-akash).
 
 ## Index
 
 * [Motivation](#motivation)
+* [How to start](#how-to-start)
 * [Requirements](#requirements)
-* [Installation](#installation)
-* [Language And Tools](#language-and-tools)
 * [Implementation](#implementation)
 * [Contribution](#contribution)
+* [Ideas](#ideas)
 
 ### Motivation
 
 Motivation of this project to make production ready API for Text Summarization.
-This project implements basic algorithm for extractive text summarization using Python.
+This project implements a NLP algorithm for extractive text summarization using Python and serves using flask API.
 
 ### How to start
 
@@ -23,12 +23,11 @@ You need to run ```app.py``` file in your development environment.
 
 >Open http://127.0.0.1:5000/, customize project files and **have fun**.
 
-
-## Requirements
+### Requirements
 
 The suggested way is to use ```python virtual environment```. The project is developed using ```python 3.7.1```
 
-### Included modules support
+#### Included modules support
 
 ##### Python
 This project uses very simple <b>python web framework called [Flask](http://flask.pocoo.org/)</b>, which is very eay to learn ad adopt.
@@ -47,14 +46,16 @@ The HTML Template used in this project is <b>[Stanley](https://templatemag.com/s
 
 - Vanilla CSS
 
-### Installation
+##### Installation
 Run requirements.txt to install the required python packages.
 
 ```
 $ pip install -r requirements.txt
 ```
+---
+### Implementation
 
-## Project Structure 
+##### Project Structure 
 ```
 |───config/
 |───framework/
@@ -65,9 +66,10 @@ $ pip install -r requirements.txt
 |───wsgi.py
 ```
 
-#### Implementation
+
 
 ----
+##### Framework
     ├──framework
     | |──justext
     | |──parser
@@ -104,7 +106,7 @@ $ pip install -r requirements.txt
        :: get the text content of the paragraph without any tags
 
  ---
- 
+##### Summarization Algorithm
     ├──implementaion
     | |──word_frequency_summarize_parser.py
     
@@ -117,15 +119,71 @@ $ pip install -r requirements.txt
 
 > i.e, it gives more weighing to Header or Bold text than normal text. 
 
- ---
+---
+##### Flask service
  
     ├──app.py
-    
-The app.py 
-    
+
+What if we want to make our summarize algorithm as service. (SAAS startup ???)
+The app.py is flask module which serves an API that summarize the webpage
+
+    # `summarize` method takes webpage url as argument and returns the summarized text as json object
+    @app.route('/v1/summarize', methods=['GET'])
+    def summarize():
+        ...
+
+###### Usage: 
+This is a GET API which can be queried easily using CURL, Postman or your favourite browser.
+
+``ie, GET /v1/summarize?url=https://medium.com/@bnoll12/real-freedom-539c8e9499bb``
+
+OR via browser
+
+``http://localhost:5000/v1/summarize?url=https://medium.com/@bnoll12/real-freedom-539c8e9499bb``
+
+---
+##### Let's add some UI
+    ├──templates
+    ├ ├──index.html
+    ├──static
+    ├ ├──assets
+    ├ ├ ├──css
+    ├ ├ ├──js
+
+###### 1. Accept the website url from the user 
+The following interface takes the website url and request the API we've developed using ajax.
+<p align="center">
+<img src="./screens/screen_webpage_1.PNG" alt="screen_webpage_1" width="450"/>
+<p>
+
+###### 2. Ajax request using javascript: main.js
+
+    $.ajax({
+        url: baseUrl + "?url=" + mediumURL
+    }).then(function(data) {
+       processSummary(mediumURL, data.summary);
+    });
 
 
+###### 3. Process API response and display on UI
+The API response is displayed on the HTML page using javascript.
 
-### Contribution
+    var summary = document.createElement('p');
+    summary.innerHTML = "<b>Summary</b>: " + summaryData;
+    $('#summary').append(summary);
 
+<p align="center">
+<img src="./screens/screen_webpage_2.PNG" alt="screen_webpage_2" width="450"/>
+<p>
+
+#### Contribution
 Feel free to raise an issue for bug or feature request And pull request for any kind of improvements.
+
+#### Ideas
+If you find this project interesting, you can do pretty more now, followings ideas might help you.
+
+- We can customize the API by adding more options to manipulate the output.
+  ie, summary length, ignoring list text, etc
+- Display list of sentences instead of paragraph.
+- Create chrome plugin and highlight the sentences.
+

@@ -62,7 +62,7 @@ def index():
     return render_template('index.html', base_url=base_url)
 
 
-# `summarize` method takes medium.com url as argument and returns the summarized summary_text out of an article
+# `summarize` method takes webpage url as argument and returns the summarized text as json object
 @app.route('/v1/summarize', methods=['GET'])
 def summarize():
     app.logger.debug('summarize(): requested')
