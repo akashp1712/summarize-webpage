@@ -88,24 +88,25 @@ $ pip install -r requirements.txt
   - ``parser`` creates list of ``Paragraph`` object which has following properties:
   
     
-    1. is_heading -> boolean
-       :: returns true if paragraph is heading (<H1>...<H6>) 
-    
-   
-    2. is_list_set -> boolean 
-       :: returns true if paragraph is list tag (<li>)
+```
+1. is_heading -> boolean
+   :: returns true if paragraph is heading ``(<H1>...<H6>)`` 
 
 
-    3. is_paragraph -> boolean
-       :: returns true if paragraph is paragraph tag (<p>)
+2. is_list_set -> boolean 
+   :: returns true if paragraph is list tag (<li>)
 
-    4. is_first_paragraph(self):
-       :: returns true if the paragraph is the first paragraph from the content.
 
-    5. text(self):
-       :: get the text content of the paragraph without any tags
+3. is_paragraph -> boolean
+   :: returns true if paragraph is paragraph tag (<p>)
 
- ---
+4. is_first_paragraph(self):
+   :: returns true if the paragraph is the first paragraph from the content.
+
+5. text(self):
+   :: get the text content of the paragraph without any tags
+```
+---
 ##### Summarization Algorithm
     ├──implementaion
     | |──word_frequency_summarize_parser.py
@@ -153,7 +154,7 @@ OR via browser
 ###### 1. Accept the website url from the user 
 The following interface takes the website url and request the API we've developed using ajax.
 <p align="center">
-<img src="./screens/screen_webpage_1.PNG" alt="screen_webpage_1" width="450"/>
+<img src="./screens/screen_webpage_1.png" alt="screen_webpage_1" width="450"/>
 <p>
 
 ###### 2. Ajax request using javascript: main.js
@@ -173,7 +174,7 @@ The API response is displayed on the HTML page using javascript.
     $('#summary').append(summary);
 
 <p align="center">
-<img src="./screens/screen_webpage_2.PNG" alt="screen_webpage_2" width="450"/>
+<img src="./screens/screen_webpage_2.png" alt="screen_webpage_2" width="450"/>
 <p>
 
 #### Contribution
