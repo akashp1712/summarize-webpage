@@ -9,6 +9,7 @@
 * [Implementation](#implementation)
 * [Contribution](#contribution)
 * [Ideas](#ideas)
+* [Credits](#credits)
 
 ### Motivation
 
