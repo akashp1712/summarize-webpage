@@ -11,7 +11,7 @@
 - [X] Explain Flask as an API only
 - [X] Explain the UI Interface
 - [X] Demo screenshots
-- [ ] Extend jusText License
+- [X] Extend jusText License
 - [ ] Demo deployment ?
 - [X] Ideas to extend it
     - to create API with customization options

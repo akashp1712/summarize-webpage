@@ -188,3 +188,18 @@ If you find this project interesting, you can do pretty more now, followings ide
 - Display list of sentences instead of paragraph.
 - Create chrome plugin and highlight the sentences.
 
+#### Credits
+
+This application uses Open Source components. You can find the source code of their open source projects along with license information below.
+
+I acknowledge and is grateful to these developers for their contributions to open source.
+
+###### jusText used in /framework
+    Project: Heuristic based boilerplate removal tool https://github.com/miso-belica/jusText
+    Copyright (c) 2011, Jan Pomikalek <jan.pomikalek@gmail.com> Copyright (c) 2013, Michal Belica. All Rights Reserved.
+    License (2-Clause BSD) https://github.com/miso-belica/jusText/blob/dev/LICENSE.rst
+    
+###### HTML template theme
+    Project: Stanley - HTML theme by TemplateMag (https://templatemag.com)
+    Copyrights Stanley. All Rights Reserved.
+    Licensing information: https://templatemag.com/license/
