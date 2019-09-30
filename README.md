@@ -119,7 +119,49 @@ $ pip install -r requirements.txt
   
 > <b>Important:</b> This project has implemented slightly modified version of the Algorithm, where scoring the sentences method considers the web Text properties such as Header or list text.
 
-> i.e, it gives more weighing to Header or Bold text than normal text. 
+> i.e, it gives more weighing to Header or Bold text than normal text.
+
+```python
+# All weightage for structure doc
+# Important: These scores are for the experimenting purpose only
+
+WEIGHT_FOR_LIST = 5
+WEIGHT_FOR_HIGHLIGHTED = 10
+WEIGHT_FOR_NUMERICAL = 5
+WEIGHT_FIRST_PARAGRAPH = 5
+WEIGHT_BASIC = 1
+
+...
+
+ for word in words:
+    if paragraph.is_list_set:
+        weight = WEIGHT_FOR_LIST
+    else:
+        weight = WEIGHT_BASIC
+
+    if word in highlighted_words:
+        weight += WEIGHT_FOR_HIGHLIGHTED
+
+    if word.isnumeric() and len(word) >= 2:
+        weight += WEIGHT_FOR_NUMERICAL
+
+    if paragraph.is_first_paragraph:
+        weight += WEIGHT_FIRST_PARAGRAPH
+
+    word = ps.stem(word)
+    if word in stopWords:
+        continue
+
+    if word in freqTable:
+        freqTable[word] += weight
+    else:
+        freqTable[word] = weight
+
+```
+
+This way we can give extra weightage to words which are part of the headers or list. This way we can give more importnace to such words.
+
+<b>Idea:</b> Play with the weightage and see the difference in the result!
 
 ---
 ##### Flask service
