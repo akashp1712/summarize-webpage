@@ -1,5 +1,5 @@
 # summarize_webpage
-#### A Flask application that extract and summarize webpage using Natural Language Processing powered by [nlp-akash](https://github.com/akashp1712/nlp-akash).
+#### A Flask application that extract and summarize webpage using Natural Language Processing. Powered by [nlp-akash](https://github.com/akashp1712/nlp-akash).
 
 ## Index
 
@@ -13,8 +13,7 @@
 
 ### Motivation
 
-Motivation of this project to make production ready API for Text Summarization.
-This project implements a NLP algorithm for extractive text summarization using Python and serves using flask API.
+Motivation of this project to make production ready API for **Text Summarization Algorithm** and leverage it for the real-world use cases. This project implements a NLP algorithm using Python and serves using flask API.
 
 ### How to start
 
@@ -31,7 +30,7 @@ The suggested way is to use ```python virtual environment```. The project is dev
 #### Included modules support
 
 ##### Python
-This project uses very simple <b>python web framework called [Flask](http://flask.pocoo.org/)</b>, which is very eay to learn ad adopt.
+This project uses very simple <b>python web framework called [Flask](http://flask.pocoo.org/)</b>, which is very easy to learn and adopt. (even scale!!!)
 
 The <b>[NLTK](https://www.nltk.org) - Natural Language ToolKit</b> is used for the Text Summarization Algorithm implementation.
 
@@ -168,8 +167,8 @@ This way we can give extra weightage to words which are part of the headers or l
  
     ├──app.py
 
-What if we want to make our summarize algorithm as service. (SAAS startup ???)
-The app.py is flask module which serves an API that summarize the webpage
+What if we want to make our Algorithm as servable API? (**SAAS startup ???**)
+Yes! we can do that, The app.py is flask module which serves an API that summarize the webpage
 
     # `summarize` method takes webpage url as argument and returns the summarized text as json object
     @app.route('/v1/summarize', methods=['GET'])
