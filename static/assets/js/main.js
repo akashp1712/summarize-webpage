@@ -2,17 +2,17 @@ $(document).ready(function() {
 
   $("#btnSubmit").click(function() {
 
-    var mediumURL = $("#inputUrl").val();
+    var webURL = $("#inputUrl").val();
 
-    if (0 === mediumURL.length) {
+    if (0 === webURL.length) {
         // Default link for testingó
-        mediumURL = "https://medium.com/the-mission/the-5-minute-routine-that-will-10x-your-productivity-1d148c360ea8";
+        webURL = "https://medium.com/the-mission/the-5-minute-routine-that-will-10x-your-productivity-1d148c360ea8";
     }
 
     $.ajax({
-        url: baseUrl + "?url=" + mediumURL
+        url: baseUrl + "?url=" + webURL
     }).then(function(data) {
-       processSummary(mediumURL, data.summary);
+       processSummary(webURL, data.summary);
     });
 
     function processSummary(urlToPost, summaryData) {

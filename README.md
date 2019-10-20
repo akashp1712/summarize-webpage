@@ -196,7 +196,7 @@ OR via browser
 ###### 1. Accept the website url from the user 
 The following interface takes the website url and request the API we've developed using ajax.
 <p align="center">
-<img src="./screens/screen_webpage_1.png" alt="screen_webpage_1" width="900" height="600"/>
+<img src="./screens/screen_webpage_1.png" alt="screen_webpage_1" width="900" height="450"/>
 <p>
 
 ###### 2. Ajax request using javascript: main.js
@@ -216,7 +216,7 @@ The API response is displayed on the HTML page using javascript.
     $('#summary').append(summary);
 
 <p align="center">
-<img src="./screens/screen_webpage_2.png" alt="screen_webpage_2" width="900" height="600"/>
+<img src="./screens/screen_webpage_2.png" alt="screen_webpage_2" width="900" height="450"/>
 <p>
 
 #### Contribution
