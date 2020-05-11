@@ -216,7 +216,7 @@ The API response is displayed on the HTML page using javascript.
     $('#summary').append(summary);
 
 <p align="center">
-<img src="./screens/screen_webpage_2.png" alt="screen_webpage_2" width="900" height="450"/>
+<img src="./screens/screen_webpage_2.png" alt="screen_webpage_2" width="900" height="520"/>
 <p>
 
 #### Contribution
