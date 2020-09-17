@@ -1,8 +1,9 @@
 # Summarize-Webpage
-### A Flask application that extract and summarize webpage using Natural Language Processing. Powered by [nlp-akash](https://github.com/akashp1712/nlp-akash).
+#### Powered by [nlp-akash](https://github.com/akashp1712/nlp-akash).
+### A Flask application that extract and summarize webpage using Natural Language Processing.
 
 <p align="center">
-<img src="./screens/screen_webpage_1.png" alt="screen_webpage_1" width="900" height="450"/>
+<img src="./screens/screen_webpage_1.png" alt="screen_webpage_1" width="900" height="500"/>
 <p>
 
 ## Index
