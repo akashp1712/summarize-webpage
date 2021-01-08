@@ -1,4 +1,4 @@
 requests==2.21.0
 Flask==1.0.2
 nltk==3.4.5
-lxml==4.3.2
+lxml==4.6.2
