@@ -82,10 +82,7 @@ def output_default(paragraphs, fp=sys.stdout, no_boilerplate=True):
     """
     for paragraph in paragraphs:
         if paragraph.class_type == 'good':
-            if paragraph.heading:
-                tag = 'h'
-            else:
-                tag = 'p'
+            tag = 'h' if paragraph.heading else 'p'
         elif no_boilerplate:
             continue
         else:
@@ -122,10 +119,7 @@ def output_krdwrd(paragraphs, fp=sys.stdout):
     """
     for paragraph in paragraphs:
         if paragraph.class_type in ('good', 'neargood'):
-            if paragraph.heading:
-                cls = 2
-            else:
-                cls = 3
+            cls = 2 if paragraph.heading else 3
         else:
             cls = 1
 
@@ -190,7 +184,7 @@ def main():
                     if os.path.isfile(a):
                         try:
                             fp_stoplist = codecs.open(a, 'r', 'utf8')
-                            stoplist = set([l.strip() for l in fp_stoplist])
+                            stoplist = {l.strip() for l in fp_stoplist}
                             fp_stoplist.close()
                         except IOError as e:
                             raise JustextInvalidOptions(
@@ -288,8 +282,6 @@ def main():
             except (IOError, URLError) as e:
                 raise JustextInvalidOptions(
                     "Can't open %s for reading: %s" % (args[0], e))
-                sys.exit(1)
-
         html_text = fp_in.read()
         if fp_in is not sys.stdin:
             fp_in.close()

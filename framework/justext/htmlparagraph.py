@@ -54,13 +54,7 @@ class HTMLParagraph(object):
         return text
 
     def stopwords_count(self, stopwords):
-        count = 0
-
-        for word in self.text.split():
-            if word.lower() in stopwords:
-                count += 1
-
-        return count
+        return sum(word.lower() in stopwords for word in self.text.split())
 
     def stopwords_density(self, stopwords):
         words_count = self.words_count

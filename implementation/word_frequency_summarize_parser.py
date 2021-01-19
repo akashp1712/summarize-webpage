@@ -33,7 +33,7 @@ def _create_frequency_table(paragraph_list) -> dict:
 
     ps = PorterStemmer()
 
-    freqTable = dict()
+    freqTable = {}
     for paragraph in paragraph_list:
         words = word_tokenize(paragraph.text)
 
@@ -43,11 +43,7 @@ def _create_frequency_table(paragraph_list) -> dict:
 
         for word in words:
 
-            if paragraph.is_list_set:
-                weight = WEIGHT_FOR_LIST
-            else:
-                weight = WEIGHT_BASIC
-
+            weight = WEIGHT_FOR_LIST if paragraph.is_list_set else WEIGHT_BASIC
             if word in highlighted_words:
                 weight += WEIGHT_FOR_HIGHLIGHTED
 
@@ -77,7 +73,7 @@ def _score_sentences(sentences, freqTable) -> dict:
     """
     # TODO: Can you make this multiprocess compatible in python?
 
-    sentenceValue = dict()
+    sentenceValue = {}
 
     for sentence in sentences:
         word_count_in_sentence = (len(word_tokenize(sentence)))
@@ -109,10 +105,7 @@ def _find_average_score(sentenceValue) -> int:
     Find the average score from the sentence value dictionary
     :rtype: int
     """
-    sumValues = 0
-    for entry in sentenceValue:
-        sumValues += sentenceValue[entry]
-
+    sumValues = sum(sentenceValue[entry] for entry in sentenceValue)
     average = 0
     # Average value of a sentence from original summary_text
     if len(sentenceValue) > 0:

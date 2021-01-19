@@ -89,8 +89,6 @@ def summarize():
 
     except Exception as ex:
         app.logger.error('summarize(): error while summarizing: ' + str(ex) + '\n' + traceback.format_exc())
-        pass
-
     return make_response(jsonify({'summary': summary}))
 
 

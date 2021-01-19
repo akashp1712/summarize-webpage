@@ -59,7 +59,7 @@ def html_to_dom(html, default_encoding=DEFAULT_ENCODING, encoding=None, errors=D
     if isinstance(html, unicode):
         decoded_html = html
         # encode HTML for case it's XML with encoding declaration
-        forced_encoding = encoding if encoding else default_encoding
+        forced_encoding = encoding or default_encoding
         html = html.encode(forced_encoding, errors)
     else:
         decoded_html = decode_html(html, default_encoding, encoding, errors)
@@ -261,15 +261,9 @@ def classify_paragraphs(paragraphs, stoplist, length_low=LENGTH_LOW_DEFAULT,
         elif re.search('^select|\.select', paragraph.dom_path):
             paragraph.cf_class = 'bad'
         elif length < length_low:
-            if paragraph.chars_count_in_links > 0:
-                paragraph.cf_class = 'bad'
-            else:
-                paragraph.cf_class = 'short'
+            paragraph.cf_class = 'bad' if paragraph.chars_count_in_links > 0 else 'short'
         elif stopword_density >= stopwords_high:
-            if length > length_high:
-                paragraph.cf_class = 'good'
-            else:
-                paragraph.cf_class = 'neargood'
+            paragraph.cf_class = 'good' if length > length_high else 'neargood'
         elif stopword_density >= stopwords_low:
             paragraph.cf_class = 'neargood'
         else:
@@ -402,29 +396,27 @@ def justextHTML(html_text=None, web_url=None):
         response = requests.get(web_url)
         html_text = response.content
 
-    if html_text is not None:
-
-        final_paragraphs = justext(html_text, get_stoplist("English"))
-        new_paragraphs = []
-
-        for paragraph in final_paragraphs:
-            if not paragraph.is_boilerplate:
-
-                if paragraph.is_heading:
-                    new_paragraphs.append("<header>" + paragraph.text + "</header>")
-
-                elif paragraph.is_root_list_point:
-                    new_paragraphs.append(paragraph.text)
-
-                elif paragraph.is_list_point:
-                    new_paragraphs.append("<li>" + paragraph.text + " </li>")
-
-                else:  # everything else is paragraph
-                    new_paragraphs.append("<p>" + paragraph.text + "</p>")
-
-        # return the concatenated text string
-        return "".join(new_paragraphs)
-
-    else:
+    if html_text is None:
         raise JustextError("Unable to process the HTML text: Empty text or Unable to fetch from the data from web")
+
+    final_paragraphs = justext(html_text, get_stoplist("English"))
+    new_paragraphs = []
+
+    for paragraph in final_paragraphs:
+        if not paragraph.is_boilerplate:
+
+            if paragraph.is_heading:
+                new_paragraphs.append("<header>" + paragraph.text + "</header>")
+
+            elif paragraph.is_root_list_point:
+                new_paragraphs.append(paragraph.text)
+
+            elif paragraph.is_list_point:
+                new_paragraphs.append("<li>" + paragraph.text + " </li>")
+
+            else:  # everything else is paragraph
+                new_paragraphs.append("<p>" + paragraph.text + "</p>")
+
+    # return the concatenated text string
+    return "".join(new_paragraphs)
 
