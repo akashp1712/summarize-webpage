@@ -6,7 +6,7 @@
 <img src="./screens/screen_webpage_1.png" alt="screen_webpage_1" width="900" height="500"/>
 <p>
 
-## Index
+# Index
 
 * [Motivation](#motivation)
 * [How to start](#how-to-start)
@@ -16,11 +16,11 @@
 * [Ideas](#ideas)
 * [Credits](#credits)
 
-### Motivation
+## Motivation
 
 Motivation of this project to make production ready API for **Text Summarization Algorithm** and leverage it for the real-world use cases. This project implements a NLP algorithm using Python and serves using flask API.
 
-### How to start
+## How to start
 
 You need to manually clone or download this repository. Project is ready to run (with some requirements).
 
@@ -28,39 +28,39 @@ You need to run ```app.py``` file in your development environment.
 
 >Open http://127.0.0.1:5000/, customize project files and **have fun**.
 
-### Requirements
+## Requirements
 
 The suggested way is to use ```python virtual environment```. The project is developed using ```python 3.7.1```
 
-#### Included modules support
+### Included modules support
 
-##### Python
+#### Python
 This project uses very simple <b>python web framework called [Flask](http://flask.pocoo.org/)</b>, which is very easy to learn and adopt. (even scale!!!)
 
 The <b>[NLTK](https://www.nltk.org) - Natural Language ToolKit</b> is used for the Text Summarization Algorithm implementation.
 
-##### HTML
+#### HTML
 
 The HTML Template used in this project is <b>[Stanley](https://templatemag.com/stanley-bootstrap-freelancer-template/) - Bootstrap Freelancer Template</b>.
 
-##### JavaScript
+#### JavaScript
 
 - Vanilla Javascript
 
-##### CSS
+#### CSS
 
 - Vanilla CSS
 
-##### Installation
+#### Installation
 Run requirements.txt to install the required python packages.
 
 ```
 $ pip install -r requirements.txt
 ```
 ---
-### Implementation
+## Implementation
 
-##### Project Structure 
+#### Project Structure 
 ```
 |───config/
 |───framework/
@@ -74,7 +74,7 @@ $ pip install -r requirements.txt
 
 
 ----
-##### Framework
+#### Framework
     ├──framework
     | |──justext
     | |──parser
@@ -112,7 +112,7 @@ $ pip install -r requirements.txt
    :: get the text content of the paragraph without any tags
 ```
 ---
-##### Summarization Algorithm
+#### Summarization Algorithm
     ├──implementaion
     | |──word_frequency_summarize_parser.py
     
@@ -168,7 +168,7 @@ This way we can give extra weightage to words which are part of the headers or l
 <b>Idea:</b> Play with the weightage and see the difference in the result!
 
 ---
-##### Flask service
+#### Flask service
  
     ├──app.py
 
@@ -180,7 +180,7 @@ Yes! we can do that, The app.py is flask module which serves an API that summari
     def summarize():
         ...
 
-###### Usage: 
+##### Usage: 
 This is a GET API which can be queried easily using CURL, Postman or your favourite browser.
 
 ``ie, GET /v1/summarize?url=https://medium.com/@bnoll12/real-freedom-539c8e9499bb``
@@ -190,7 +190,7 @@ OR via browser
 ``http://localhost:5000/v1/summarize?url=https://medium.com/@bnoll12/real-freedom-539c8e9499bb``
 
 ---
-##### Let's add some UI
+#### Let's add some UI
     ├──templates
     ├ ├──index.html
     ├──static
@@ -198,13 +198,13 @@ OR via browser
     ├ ├ ├──css
     ├ ├ ├──js
 
-###### 1. Accept the website url from the user 
+##### 1. Accept the website url from the user 
 The following interface takes the website url and request the API we've developed using ajax.
 <p align="center">
 <img src="./screens/screen_webpage_1.png" alt="screen_webpage_1" width="900" height="450"/>
 <p>
 
-###### 2. Ajax request using javascript: main.js
+##### 2. Ajax request using javascript: main.js
 
     $.ajax({
         url: baseUrl + "?url=" + mediumURL
@@ -213,7 +213,7 @@ The following interface takes the website url and request the API we've develope
     });
 
 
-###### 3. Process API response and display on UI
+##### 3. Process API response and display on UI
 The API response is displayed on the HTML page using javascript.
 
     var summary = document.createElement('p');
@@ -224,10 +224,10 @@ The API response is displayed on the HTML page using javascript.
 <img src="./screens/screen_webpage_2.png" alt="screen_webpage_2" width="900" height="520"/>
 <p>
 
-#### Contribution
+### Contribution
 Feel free to raise an issue for bug or feature request And pull request for any kind of improvements.
 
-#### Ideas
+### Ideas
 If you find this project interesting, you can do pretty more now, followings ideas might help you.
 
 - We can customize the API by adding more options to manipulate the output.
@@ -235,18 +235,18 @@ If you find this project interesting, you can do pretty more now, followings ide
 - Display list of sentences instead of paragraph.
 - Create chrome plugin and highlight the sentences.
 
-#### Credits
+### Credits
 
 This application uses Open Source components. You can find the source code of their open source projects along with license information below.
 
 I acknowledge and is grateful to these developers for their contributions to open source.
 
-###### jusText used in /framework
+##### jusText used in /framework
     Project: Heuristic based boilerplate removal tool https://github.com/miso-belica/jusText
     Copyright (c) 2011, Jan Pomikalek <jan.pomikalek@gmail.com> Copyright (c) 2013, Michal Belica. All Rights Reserved.
     License (2-Clause BSD) https://github.com/miso-belica/jusText/blob/dev/LICENSE.rst
     
-###### HTML template theme
+##### HTML template theme
     Project: Stanley - HTML theme by TemplateMag (https://templatemag.com)
     Copyrights Stanley. All Rights Reserved.
     Licensing information: https://templatemag.com/license/
