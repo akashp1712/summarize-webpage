@@ -16,5 +16,7 @@
 - [X] Ideas to extend it
     - to create API with customization options
 	- to create chrome plugin
+- [ ] Extend jusText and HTMLParser to have custom implementation
+	- Avoid confusion by modifying the original code
 
 
