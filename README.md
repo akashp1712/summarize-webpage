@@ -1,4 +1,4 @@
-# Summarize-Webpage, Powered by [nlp-akash](https://github.com/akashp1712/nlp-akash).
+# Summarize-Webpage, Powered by [LessenText](https://yep.so/stats/lessentextai).
 
 ## A Flask application that extract and summarize webpage using Natural Language Processing.
 
