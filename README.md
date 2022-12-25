@@ -1,4 +1,4 @@
-# Summarize-Webpage, Powered by [LessenText](https://yep.so/stats/lessentextai).
+# Summarize-Webpage, Powered by [LessenText](https://yep.so/p/lessentextai?ref=github).
 
 ## A Flask application that extract and summarize webpage using Natural Language Processing.
 
