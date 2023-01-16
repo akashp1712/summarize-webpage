@@ -250,3 +250,6 @@ I acknowledge and is grateful to these developers for their contributions to ope
     Project: Stanley - HTML theme by TemplateMag (https://templatemag.com)
     Copyrights Stanley. All Rights Reserved.
     Licensing information: https://templatemag.com/license/
+
+---
+#### PS: if you like my work, please support by adding yourself for [LessenText](https://yep.so/p/lessentextai?ref=github) Beta program.
